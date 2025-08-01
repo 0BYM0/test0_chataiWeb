@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.52.1",
+    "axios": "^1.11.0",
+    "pinia": "^2.3.1",
+    "tdesign-vue-next": "^1.15.1",
+    "uuid": "^11.1.0",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0"
+  }
+}

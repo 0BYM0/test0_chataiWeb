@@ -1,0 +1,21 @@
+# Web Framework
+fastapi
+uvicorn
+
+# LangChain - More granular dependencies to reduce size
+langchain-core
+langchain-openai
+langchain-community # Kept for document loaders
+langchain-text-splitters
+
+# Document Processing & Tokenizer
+pypdf # Dependency for PyPDFLoader
+tiktoken
+
+# Supabase Python Client
+supabase
+
+# Utilities
+python-dotenv
+python-multipart
+gotrue # 用于处理Supabase JWT

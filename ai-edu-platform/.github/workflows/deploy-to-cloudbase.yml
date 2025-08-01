@@ -1,0 +1,52 @@
+name: 部署到腾讯云开发CloudBase
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      # 安装Node.js环境
+      - name: 设置Node.js环境
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      
+      # 安装CloudBase CLI
+      - name: 安装CloudBase CLI
+        run: npm install -g @cloudbase/cli
+      
+      # 构建前端应用
+      - name: 构建前端应用
+        run: |
+          cd frontend
+          npm install
+          npm run build
+      
+      # 构建后端应用
+      - name: 设置JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      
+      - name: 构建后端应用
+        run: |
+          cd backend
+          mvn clean package -DskipTests
+      
+      # 部署到CloudBase
+      - name: 部署到CloudBase
+        run: |
+          chmod +x ./deploy-to-cloudbase.sh
+          ./deploy-to-cloudbase.sh
+        env:
+          CLOUDBASE_SECRET_ID: ${{ secrets.CLOUDBASE_SECRET_ID }}
+          CLOUDBASE_SECRET_KEY: ${{ secrets.CLOUDBASE_SECRET_KEY }}
+          CLOUDBASE_ENV_ID: cloud1-0g0mbccz12f37fb3
+          MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}

@@ -1,0 +1,367 @@
+/* 聊天容器 */
+.chat-container {
+  display: flex;
+  height: calc(100vh - 64px - 60px); /* 减去头部和底部的高度 */
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* 左侧边栏 */
+.sidebar {
+  width: 280px;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition-normal);
+}
+
+.sidebar-collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-header h3 {
+  margin: 0;
+}
+
+.new-chat-btn {
+  margin: var(--spacing-md);
+}
+
+.conversation-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.conversation-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.conversation-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.conversation-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conversation-time {
+  font-size: var(--font-size-small);
+  color: var(--light-text);
+}
+
+.active {
+  background-color: rgba(40, 120, 255, 0.1);
+}
+
+/* 中央对话区 */
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.chat-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.chat-title h3 {
+  margin: 0;
+}
+
+.chat-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+}
+
+.empty-chat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text);
+}
+
+.empty-chat .t-icon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.message {
+  display: flex;
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.message-user {
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  flex-shrink: 0;
+}
+
+.message-content {
+  max-width: 80%;
+}
+
+.message-user .message-content {
+  text-align: right;
+}
+
+.message-header {
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-user .message-header {
+  flex-direction: row-reverse;
+}
+
+.message-sender {
+  font-weight: 500;
+}
+
+.message-time {
+  font-size: var(--font-size-small);
+  color: var(--light-text);
+}
+
+.message-body {
+  background-color: #f0f2f5;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+  word-break: break-word;
+}
+
+.message-user .message-body {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: var(--spacing-sm);
+  width: fit-content;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--light-text);
+  animation: typing 1s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.chat-input {
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.input-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-sm);
+}
+
+/* 右侧知识面板 */
+.knowledge-panel {
+  width: 300px;
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition-normal);
+}
+
+.panel-collapsed {
+  width: 0;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.panel-header h3 {
+  margin: 0;
+}
+
+.panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+}
+
+.empty-panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-text);
+}
+
+.empty-panel .t-icon {
+  font-size: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.knowledge-item {
+  margin-bottom: var(--spacing-md);
+}
+
+.panel-footer {
+  padding: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.panel-footer h4 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.learning-progress {
+  margin-bottom: var(--spacing-sm);
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-small);
+  color: var(--light-text);
+}
+
+/* 智能体选择器 */
+.agent-selector {
+  padding: var(--spacing-md);
+}
+
+.agent-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.agent-option {
+  width: 100%;
+  height: 100%;
+}
+
+.agent-option-content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+}
+
+.agent-option-info {
+  text-align: left;
+}
+
+.agent-option-name {
+  font-weight: 500;
+}
+
+.agent-option-role {
+  font-size: var(--font-size-small);
+  color: var(--light-text);
+}
+
+.agent-description {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: #f0f2f5;
+  border-radius: var(--border-radius-md);
+}
+
+.agent-description h4 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
+}
+
+.agent-description p {
+  margin: 0;
+  color: var(--light-text);
+}
+
+/* 设置对话框 */
+.settings-content {
+  padding: var(--spacing-md);
+}
+
+.setting-description {
+  font-size: var(--font-size-small);
+  color: var(--light-text);
+  margin-top: var(--spacing-xs);
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}

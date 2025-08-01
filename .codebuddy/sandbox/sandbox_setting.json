@@ -1,0 +1,20 @@
+{
+  "path": "d:\\Zhuoqian\\CodeBuddy Project\\test\\ai-edu-platform\\frontend",
+  "desc": "这是一个智能教育应用平台的前端项目，基于Vue.js开发，用于辅助广东省义务教育阶段的学生和教师进行人工智能知识学习和教学。",
+  "id": "45e5f27cf3c942618417e29fdfb05f7f",
+  "data": {
+    "spaceKey": "45e5f27cf3c942618417e29fdfb05f7f",
+    "connections": {
+      "webIDE": "https://45e5f27cf3c942618417e29fdfb05f7f.ap-singapore.cloudstudio.club",
+      "preview": "",
+      "api": "https://45e5f27cf3c942618417e29fdfb05f7f--api.ap-singapore.cloudstudio.club",
+      "pty": "https://45e5f27cf3c942618417e29fdfb05f7f--pty.ap-singapore.cloudstudio.club"
+    }
+  },
+  "config": {
+    "api": "https://45e5f27cf3c942618417e29fdfb05f7f--api.ap-singapore.cloudstudio.club",
+    "pty": "https://45e5f27cf3c942618417e29fdfb05f7f--pty.ap-singapore.cloudstudio.club",
+    "region": "ap-shanghai",
+    "spaceKey": "45e5f27cf3c942618417e29fdfb05f7f"
+  }
+}

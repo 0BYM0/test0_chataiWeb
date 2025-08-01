@@ -1,0 +1,37 @@
+{
+  "envId": "cloud1-0g0mbccz12f37fb3",
+  "functionRoot": "./functions",
+  "functions": [],
+  "framework": {
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "envVariables": {
+            "VITE_SUPABASE_URL": "https://rqgvxjltlupikmzxvqrc.supabase.co",
+            "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxZ3Z4amx0bHVwaWttenh2cXJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM0OTg0NTUsImV4cCI6MjA2OTA3NDQ1NX0.HAqkkklscl-dWTv8mUzBtIavHdQA1_5X5OGAcWtch6g"
+          }
+        }
+      },
+      "server": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "envVariables": {
+            "SPRING_PROFILES_ACTIVE": "prod",
+            "SUPABASE_PASSWORD": "${SUPABASE_PASSWORD}",
+            "JWT_SECRET": "${JWT_SECRET}",
+            "AI_SERVICE_URL": "http://aiedu-ai-service:8000"
+          }
+        }
+      },
+      "ai-service": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "envVariables": {
+            "MOONSHOT_API_KEY": "${MOONSHOT_API_KEY}"
+          }
+        }
+      }
+    }
+  }
+}

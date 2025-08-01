@@ -1,0 +1,12 @@
+# my-rule
+
+这是一个规则文件，用于帮助 AI 理解您的代码库和遵循项目约定。
+
+## 规则列表
+
+- 1 所有终端命令 请向我提供可直接粘贴运行的命令
+- 2 所有终端命令 由我自己手动执行
+- 3 前端(Vue.js)部署在Vercel
+- 4 后端(Java Spring Boot)放弃部署整个Spring Boot应用，而是将其核心逻辑改写为Supabase Edge Functions
+- 5 数据库使用Supabase
+- 6 两个智能体服务器(FastAPI)部署在Vercel

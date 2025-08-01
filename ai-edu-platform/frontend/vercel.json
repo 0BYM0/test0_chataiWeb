@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/single-agent/:path*",
+      "destination": "https://mvp-single-agent.vercel.app/:path*"
+    },
+    {
+      "source": "/multi-agent/:path*",
+      "destination": "https://mvp-multi-agent.vercel.app/:path*"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "https://rqgvxjltlupikmzxvqrc.supabase.co/functions/v1/:path*"
+    }
+  ]
+}
