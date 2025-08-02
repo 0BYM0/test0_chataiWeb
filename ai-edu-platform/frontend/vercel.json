@@ -10,7 +10,11 @@
     },
     {
       "source": "/api/:path*",
-      "destination": "https://rqgvxjltlupikmzxvqrc.supabase.co/functions/v1/:path*"
+      "destination": "https://tebfpvgavpmujdjofdye.supabase.co/functions/v1/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
